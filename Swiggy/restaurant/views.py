@@ -15,10 +15,10 @@ def save_res(request):
     rf = RestaurantForm(request.POST)
     if rf.is_valid():
         db = rf.save(commit=False)
-        db.restro_otp = 5475
+        db.restro_otp = 4321
         db.restro_status = 'pending'
         db.save()
-        messages.success(request,"Once the admin approve the Registration you will receive an email and a text Message")
+        messages.success(request,"After approval you will get the message")
         return redirect('restro')
     else:
         return render(request,"restaurant/register.html",{"rf":rf})

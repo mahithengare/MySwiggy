@@ -165,7 +165,7 @@ def delete_type(request):
 
 
 
-def pending_res(request):
+def show_pending_res(request):
     rs = RestaurantModel.objects.filter(restro_status='pending')
     return render(request,"s_admin/pending_res.html",{"data":rs})
 
